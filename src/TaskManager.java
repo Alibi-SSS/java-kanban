@@ -154,11 +154,24 @@ public class TaskManager {
 
         for (int subtaskId : subtaskIds) {
             SubTask subtask = subtasks.get(subtaskId);
+            if(subtask == null) continue;
 
-            if (subtask.getStatus() != Status.NEW) {
+            Status status = subtask.getStatus();
+
+            if (status == Status.IN_PROGRESS) {
+                epic.setStatus(Status.IN_PROGRESS);
+                return;
+            }
+
+            if (status != Status.NEW) {
                 allNew = false;
-            } if (subtask.getStatus() != Status.DONE) {
+            }
+            if (status != Status.DONE) {
                 allDone = false;
+            }
+
+            if (!allNew && !allDone) {
+                break;
             }
         }
 
