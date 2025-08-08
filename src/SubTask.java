@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class SubTask extends Task {
     private int epicId; // ID эпика, к которому относится подзадача
@@ -28,4 +29,17 @@ public class SubTask extends Task {
                 ", epicId=" + epicId +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SubTask)) return false;
+        return getId() == ((SubTask) o).getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
+
 }
