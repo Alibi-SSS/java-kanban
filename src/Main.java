@@ -1,6 +1,8 @@
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        TaskManager manager = new TaskManager();
+        TaskManager manager = Managers.getDefault();
 
         // Создаем эпик
         Epic epic = new Epic("Переезд", "Организовать переезд в другой офис");
@@ -31,5 +33,16 @@ public class Main {
         manager.updateSubtask(subtask1);
 
         System.out.println("\nСтатус эпика после изменения подзадачи: " + epic.getStatus());
+
+        // допустим, задачи уже созданы
+        manager.getTaskById(1);
+        manager.getSubtaskById(1);
+        manager.getEpicById(1);
+        manager.getSubtaskById(1);
+
+        List<Task> history = manager.getHistory();
+
+        // Выведет: [10, 13, 4, 13] (если ID совпадают с кодом выше)
+        System.out.println("\nИстория поиска: " + "\n"  + history);
     }
 }

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class SubTask extends Task {
     private int epicId; // ID эпика, к которому относится подзадача
 
