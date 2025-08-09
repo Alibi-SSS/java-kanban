@@ -1,5 +1,8 @@
+import Managers.Managers;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import Managers.TaskManager;
+import Managers.HistoryManager;
 
 public class ManagersTest {
 
@@ -8,7 +11,7 @@ public class ManagersTest {
         TaskManager manager = Managers.getDefault();
         HistoryManager historyManager = Managers.getDefaultHistory();
 
-        assertNotNull(manager, "TaskManager должен быть инициализирован");
-        assertNotNull(historyManager, "HistoryManager должен быть инициализирован");
+        Assertions.assertNotNull(manager, "Managers.TaskManager должен быть инициализирован");
+        Assertions.assertNotNull(historyManager, "Managers.Managers.HistoryManager должен быть инициализирован");
     }
 }

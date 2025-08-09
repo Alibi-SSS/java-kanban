@@ -1,5 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
+package Managers;
+
+import Tasks.Status;
+
 import java.util.Objects;
 
 public class Task {
@@ -48,7 +50,7 @@ public class Task {
 
     @Override
     public String toString(){
-        return "Task{" +
+        return "Managers.Task{" +
                 "name=" + name + '\'' +
                 "description=" + description + '\'' +
                 "id=" + id +

@@ -1,3 +1,5 @@
+package Managers;
+
 public class Managers {
 
     //чтобы нельзя было создать экземпляр

@@ -1,5 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
+package Tasks;
+
+import Managers.Task;
+
 import java.util.Objects;
 
 public class SubTask extends Task {

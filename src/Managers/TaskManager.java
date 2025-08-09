@@ -1,3 +1,8 @@
+package Managers;
+
+import Tasks.Epic;
+import Tasks.SubTask;
+
 import java.util.*;
 
 public interface TaskManager {
